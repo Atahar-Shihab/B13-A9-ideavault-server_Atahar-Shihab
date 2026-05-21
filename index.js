@@ -309,6 +309,7 @@ async function run() {
         ...req.body,
         userEmail: req.user.email,
         userName: req.user.name,
+        userPhotoURL: req.user.photoURL || "",
         createdAt: new Date(),
       };
       const result = await commentsCol.insertOne(comment);
